@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       await register(formData.name, formData.email, formData.password, formData.phone);
-      navigate("/otp", {state : {email : email}}); // redirect after success
+      navigate("/otp", {state : {email : formData.email}}); // redirect after success
     } catch (err) {
       console.error("Registration failed:", err);
     }
